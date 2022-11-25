@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+
+    <script
+    src="https://kit.fontawesome.com/eb4e2d360b.js"
+    crossorigin="anonymous"
+  ></script>
+  </main>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="menu">
+          <a class="menu__item" href="../index.html">Inicio</a>
+          <a class="menu__item" href="./equinoTabla.html">Equinos</a>
+          <a class="menu__item" href="./empleadoTabla.html">Empleado</a>
+          <a class="menu__item" href="./servicioTabla.html">Servicio</a>
+          <a class="menu__item" href="./clienteTabla.html">Cliente</a>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="container__circle" id="circle-c">
+          <i id="icon-client" class="fa-solid  fa-user icon"></i>
+        </div>
+        <form action="" class="form" id="box">
+          <h1 class="form__h1" id="title">VENTA</h1>
+
+          <div class="forms__row">
+            <div class="forms__container">
+              <label for="" class="forms__label">Fecha</label>
+              <input class="forms__input" type="date" id="forms__date"/>
+            </div>
+            <div class="forms__container">
+              <label for="" class="forms__label">ID Caballo</label>
+              <select class="forms__input" type="text" id="forms__horseid">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+            <div class="forms__container">
+              <label for="" class="forms__label">ID Cliente</label>
+              <select class="forms__input" type="text" id="forms__clientid">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+        </div>
+
+        <div class="forms__row">
+
+          <div class="forms__container">
+            <label for="" class="forms__label">ID Empleado</label>
+            <select class="forms__input" type="text" id="forms__emplyeid">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+        
+          <div class="forms__container">
+            <label for="" class="forms__label">ID Servicio</label>
+            <select class="forms__input" type="text" id="forms__serviceid">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+          </div>
+        </div>
+
+          <div class="forms__buttons">
+            <button class="forms__button forms__button-add" onclick="location.href='./ventaTabla.html'" type="button" id="forms__add">Agregar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="container__modal" id="modal">
+        <div class="modal">
+          <div class="container__circle-x" id="circle-x">
+            <i id="icon-x" class="fa-solid fa-xmark icon-x"></i>
+          </div>
+
+          <p class="modal__text" id="modal__text">No se permiten espacios en elssssssssssssss id</p>
+          <div class="container__circle-cerrar" id="circle-cerrar">
+            <button class="button__cerrar " type="button" id="button__cerrar">Cerrar</button>
+          </div>
+        </div>
+
+      </div>
+      <script src="script.js"></script>
+
+
+
+  </body>
+</html>

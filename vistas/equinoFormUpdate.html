@@ -16,10 +16,10 @@
       <nav>
         <ul class="menu">
             <a class="menu__item" href="../index.html">Inicio</a>
-            <a class="menu__item" href="./venta-opciones.html">Venta</a>
-            <a class="menu__item" href="./empleado-opciones.html">Empleado</a>
-            <a class="menu__item" href="./servicio-opciones.html">Servicio</a>
-            <a class="menu__item" href="./equino-opciones.html">Equino</a>
+            <a class="menu__item" href="./ventaTabla.html">Venta</a>
+            <a class="menu__item" href="./empleadoTabla.html">Empleado</a>
+            <a class="menu__item" href="./servicioTabla.html">Servicio</a>
+            <a class="menu__item" href="./clienteTabla.html">Cliente</a>
         </ul>
       </nav>
     </header>
@@ -30,12 +30,16 @@
             <i class="fa-solid fa-horse-head"></i>
         </div>
         <form action="" class="form" id="box">
-          <h1 class="form__h1" id="title">Cliente</h1>
+          <h1 class="form__h1" id="title">EQUINO</h1>
 
           <div class="forms__row">
             <div class="forms__container">
               <label for="" class="forms__label">ID</label>
-              <input class="forms__input" type="text" id="forms__id"/>
+              <select class="forms__input" type="text" id="forms__equinoid">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
           </div>
           <div class="forms__container">
             <label for="" class="forms__label">Nombre</label>
@@ -44,22 +48,31 @@
         </div>
         <div class="forms__row">
           <div class="forms__container">
-            <label for="" class="forms__label">Apellido</label>
-            <input class="forms__input" type="text" id="forms__last-name"/>
-          </div>
-          <div class="forms__container">
-            <label for="" class="forms__label">Teléfono</label>
-            <input class="forms__input" type="text" id="forms__phone"/>
+            <label for="" class="forms__label">Raza</label>
+            <select class="forms__input" type="text" id="forms__race">
+              <option>De Mar</option>
+              <option>Pinto</option>
+              <option>Pura Sangre Ingles</option>
+              <option>Mustang</option>
+              <option>Percherone</option>
+              <option>Árabe</option>
+              <option>Anda Luz</option>
+              <option>TENNESSEE WALKING HORSE</option>
+              <option>APALUSA</option>
+              <option>PONI GALÉS</option>
+            </select>
           </div>
           <div class="forms__container">
             <label for="" class="forms__label">Sexo</label>
-            <input class="forms__input" type="text" id="forms__sex"/>
+            <select class="forms__input" type="text" id="forms__sex">
+              <option>Macho</option>
+              <option>Hembra</option>
+            </select>
           </div>
         </div>
 
           <div class="forms__buttons">
-            <button class="forms__button forms__button-add" onclick="location.href='./cliente-tabla.html'" type="button" id="forms__add">Agregar</button>
-            <button class="forms__button forms__button-update" onclick="location.href='./cliente-form-agregar.html'" type="button" id="forms__update">Volver</button>
+            <button class="forms__button forms__button-update" onclick="location.href='./equinoTabla.html'" type="button" id="forms__update">Actualizar</button>
           </div>
         </form>
       </div>
