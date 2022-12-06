@@ -1,7 +1,11 @@
-const menuToggle = document.querySelector('.toggle');
-        const showcase = document.querySelector('.showcase');
-  
-          menuToggle.addEventListener('click', () => {
-          menuToggle.classList.toggle('active');
-          showcase.classList.toggle('active');
-        })
+function validation(){
+        var un=document.getElementById('username').value;
+        var ps=document.getElementById('password').value;
+        if (un == "Tepache" && ps == "123"){
+            window.alert("Login Successful");
+            window.location="./inicio.html"
+        }
+        else{
+            window.alert("Login Failed");
+    }
+}

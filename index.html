@@ -1,61 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Academia de Monta</title>
-  </head>
-  <body>
-    <section class="showcase">
-      <header>
-        <h2 class="logo">Academia De Monta</h2>
-        <div class="toggle"></div>
-      </header>
-      <video src="./video/video1.mp4" muted loop autoplay></video>
-      <div class="overlay"></div>
-      <div class="text">
-        <h2>El Manejo de</h2>
-        <h3>Tu granja con nosotros</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-        <a href="#">Explora</a>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="estyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form id="form_id" method="post" name="myform">
+          <div class="user-box">
+            <input type="text" name=""  id="username" required="">
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="" id="password" required="">
+            <label>Password</label>
+          </div>
+          <input onclick="validation()" type="submit" value="Login" id="submit" class="boton"/>
+        </form>
       </div>
-      <ul class="social">
-        <li>
-          <a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png" /></a>
-        </li>
-      </ul>
-    </section>
-    <div class="menu">
-      <ul>
-        <li><a href="./vistas/ventaTabla.html">Venta</a></li>
-        <li><a href="./vistas/equinoTabla.html">Equinos</a></li>
-        <li><a href="./vistas/empleadoTabla.html">Empleado</a></li>
-        <li><a href="./vistas/servicioTabla.html">Servicio</a></li>
-        <li><a href="./vistas/clienteTabla.html">Cliente</a></li>
-      </ul>
-    </div>
 
-    <script>
-      const menuToggle = document.querySelector(".toggle");
-      const showcase = document.querySelector(".showcase");
+      <script src="scripts.js"></script>
+</body>
 
-      menuToggle.addEventListener("click", () => {
-        menuToggle.classList.toggle("active");
-        showcase.classList.toggle("active");
-      });
-    </script>
-  </body>
 </html>

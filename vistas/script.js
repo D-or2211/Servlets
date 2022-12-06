@@ -69,8 +69,14 @@ const dLastName = document.getElementById("forms__last-name");
 const dPhone = document.getElementById("forms__phone");
 const dDescription = document.getElementById("forms__description");
 const dPrice = document.getElementById("forms__price");
+const dDate = document.getElementById("forms__date");
+const dCost = document.getElementById("forms__cost");
 const dButtonAdd = document.getElementById("forms__add");
-const dButtonUpdate = document.getElementById("forms__update");
+const dButtonAddClient = document.getElementById("forms__addClient");
+const dButtonAddEmploye = document.getElementById("forms__addEmploye");
+const dButtonAddHorse = document.getElementById("forms__addHorse");
+const dButtonAddService = document.getElementById("forms__addService");
+const dButtonAddSale = document.getElementById("forms__addSale");
 const form = document.getElementById("box");
 const dModal = document.getElementById("modal");
 const dcerrar = document.getElementById("button__cerrar");
@@ -83,11 +89,22 @@ const spaces = /[ ]/;
 
 
 
-dButtonAdd.onclick = clickAdd;
-dcerrar.addEventListener("click", function () { modal.style.display = "none" });
+//dButtonAdd.onclick = clickAdd;
+//dcerrar.addEventListener("click", function () { modal.style.display = "none" });
 
+dcerrar.addEventListener("click", function () { modal.style.display = "none"});
 
-
+if(dButtonAddClient != null){
+  dButtonAddClient.addEventListener("click", clickAddClient);
+} else if (dButtonAddEmploye != null){
+  dButtonAddEmploye.addEventListener("click", clickAddEmploye);
+} else if(dButtonAddHorse != null){
+  dButtonAddHorse.addEventListener("click", clickAddHorse);
+} else if(dButtonAddService){
+  dButtonAddService.addEventListener("click", clickAddService);
+} if (dButtonAddSale){
+  dButtonAddSale.addEventListener("click", clickAddSale);
+}
 
 
 function showModal(message) {
@@ -129,9 +146,6 @@ function validateLastName() {
   }
   else if (numbers.test(lastName)) {
     showModal("No se permiten simbolos en los apellidos");
-  }
-  else if (!spaces.test(lastName)) {
-    showModal("Falta el Apellido");
   }
   else {
     bandera = true;
@@ -196,43 +210,98 @@ function validatePrice() {
   return bandera;
 }
 
-function clickAdd() {
+function validateCost() {
+  let bandera = false
+  let cost = dCost.value;
 
-  if (dLastName == null && dPhone == null && dDescription == null && dPrice == null) {
-    if (validateName()) {
-
-      form.submit();
-
-    }
+  if (cost.length == 0) {
+    showModal("No deje el costo total vacio");
   }
-  else if (dDescription == null && dPrice == null) {
-    if (validateName() && validateLastName() && validatePhone()) {
-      form.submit();
-
-    }
-  } 
-  else if (dLastName == null && dPhone == null) {
-    if (validateName() && validateDescription() && validatePrice()) {
-
-      form.submit();
-
-    }
+  else if (symbols.test(cost)) {
+    showModal("No se permiten simbolos en el costo total");
+  }
+  else if (spaces.test(cost)) {
+    showModal("No ponga espacios en costo total");
+  }
+  else if (letters.test(cost)) {
+    showModal("No ponga letras en el costo total");
   }
   else {
-    if (validateName() && validateLastName() && validatePhone() && validateDescription && validatePrice) {
-
-      form.submit();
-
-    }
+    bandera = true;
   }
+  return bandera;
 }
 
-function clickUpdate() {
-  if (validateName() && validateLastName() && validatePhone() && validateDescription() && validatePrice()) {
-    showModal("Todos los datos estan correctos")
+function validateDate() {
+  let bandera = false
+  let date = dDate.value;
+
+  if (date.length == 0) {
+    showModal("No deje la fecha vacia");
+  }
+  else if (spaces.test(date)) {
+    showModal("No ponga espacios en la fecha");
+  }
+  else if (letters.test(date)) {
+    showModal("No ponga letras en la fecha");
+  }
+  else {
+    bandera = true;
+  }
+  return bandera;
+}
+
+//function clickAdd() {
+//Para Equino
+  //if (dLastName == null && dPhone == null && dDescription == null && dPrice == null) {
+   // if (validateName()) {
+
+    //  form.submit();
+
+   // }
+ // } //Cliente y Empleado
+ // else if (dDescription == null && dPrice == null) {
+  // if (validateName() && validateLastName() && validatePhone()) {
+  //    form.submit();
+
+  //  }
+ // } //Servicio
+ // else if (dLastName == null && dPhone == null) {
+ //   if (validateName() && validateDescription() && validatePrice()) {
+      //form.submit();
+ //  }
+ // }
+//  else {
+//    if (validateName() && validateLastName() && validatePhone() && validateDescription && validatePrice) {
+//      form.submit();
+//    }
+//  }
+
+//Agregar y Udate Cliente
+function clickAddClient(){
+  if (validateName() && validateLastName() && validatePhone()){
     form.submit();
   }
 }
-
+function clickAddEmploye(){
+  if(validateName() && validateLastName() && validatePhone()){
+    form.submit();
+  }
+}
+function clickAddHorse(){
+  if(validateName()){
+    form.submit();
+  }
+}
+function clickAddService(){
+  if(validateName() && validateDescription() && validatePrice()){
+    form.submit();
+  }
+}
+function clickAddSale(){
+  if(validateDate() && validateCost()){
+    form.submit();
+  }
+}
 
 const updateButton = document.getElementsByClassName("update__buton");
